@@ -1,0 +1,37 @@
+<%= form_for @inicio  , :html => { :multipart => true } do |f| %>
+  <% if @inicio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inicio.errors.count, "error") %> prohibited this inicio from being saved:</h2>
+
+      <ul>
+      <% @inicio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="titulo">
+    <%= f.label :titulo %><br>
+    <%= f.text_area :titulo%>
+   </div>
+  <div class="field">
+    <%= f.label :texto1 %><br>
+    <%= f.text_area :texto1 %>
+  </div>
+  <div class="field">
+    <%= f.label :texto2 %><br>
+    <%= f.text_area :texto2 %>
+  </div>
+  <div class="field">
+    <%= f.label :imagen1 %><br>
+    <%= f.file_field :imagen1 %>
+  </div>
+  <div class="field">
+    <%= f.label :imagen2 %><br>
+    <%= f.file_field :imagen2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

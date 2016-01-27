@@ -1,0 +1,24 @@
+<h1><%=@pagina_inicio.titulo%></h1>
+<div class="row">
+            <div class="col-md-6 sidebar">
+            	<img class="img-responsive formato_imagen" src="<%=@pagina_inicio.imagen1.url%>">
+            	<div class="col-md-1 sidebar"></div>
+            	<div class="col-md-10 sidebar">
+            		<p align="justify" style="margin-top:7px;">
+            	 		<%= @pagina_inicio.texto1%>
+            	 	</p>
+            	</div> 
+        	</div>
+            <div class="col-md-6">
+            	<div class="col-md-1 sidebar"></div>
+            	<div class="col-md-10 sidebar">
+            	 	<p align="justify" style="margin-bottom:7px;">
+            	 		<%= @pagina_inicio.texto2%>
+            	 	</p>
+            	</div> 
+            	<img class="img-responsive formato_imagen" src="<%=@pagina_inicio.imagen2.url%>">
+            </div>
+            
+               
+</div> 
+         

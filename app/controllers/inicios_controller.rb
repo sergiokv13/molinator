@@ -4,31 +4,46 @@ class IniciosController < ApplicationController
   # GET /inicios
   # GET /inicios.json
   def index
+    if !current_user
+      redirect_to '/'
+    end
     @inicios = Inicio.all
   end
 
   # GET /inicios/1
   # GET /inicios/1.json
   def show
+    if !current_user
+      redirect_to '/'
+    end
   end
 
   # GET /inicios/new
   def new
+    if !current_user
+      redirect_to '/'
+    end
     @inicio = Inicio.new
   end
 
   # GET /inicios/1/edit
   def edit
+    if !current_user
+      redirect_to '/'
+    end
   end
 
   # POST /inicios
   # POST /inicios.json
   def create
+    if !current_user
+      redirect_to '/'
+    end
     @inicio = Inicio.new(inicio_params)
 
     respond_to do |format|
       if @inicio.save
-        format.html { redirect_to @inicio, notice: 'Inicio was successfully created.' }
+        format.html { redirect_to '/administrador', notice: 'Inicio was successfully created.' }
         format.json { render :show, status: :created, location: @inicio }
       else
         format.html { render :new }
@@ -40,9 +55,12 @@ class IniciosController < ApplicationController
   # PATCH/PUT /inicios/1
   # PATCH/PUT /inicios/1.json
   def update
+    if !current_user
+      redirect_to '/'
+    end
     respond_to do |format|
       if @inicio.update(inicio_params)
-        format.html { redirect_to @inicio, notice: 'Inicio was successfully updated.' }
+        format.html { redirect_to '/administrador', notice: 'Inicio was successfully updated.' }
         format.json { render :show, status: :ok, location: @inicio }
       else
         format.html { render :edit }

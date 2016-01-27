@@ -1,4 +1,4 @@
-<%= form_for(@empresa) do |f| %>
+<%= bootstrap_form_for(@empresa) do |f| %>
   <% if @empresa.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
@@ -12,27 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :titulo1 %><br>
     <%= f.text_area :titulo1 %>
   </div>
   <div class="field">
-    <%= f.label :titulo2 %><br>
     <%= f.text_area :titulo2 %>
   </div>
   <div class="field">
-    <%= f.label :texto1 %><br>
     <%= f.text_area :texto1 %>
   </div>
   <div class="field">
-    <%= f.label :texto2 %><br>
     <%= f.text_area :texto2 %>
   </div>
    <div class="field">
-    <%= f.label :imagen %><br>
     <%= f.file_field :imagen %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Actualizar', :class => 'btn btn-success' %>
+    <%= link_to 'Atrás', '/administrador', :class => 'btn btn-danger' %>
   </div>
 <% end %>

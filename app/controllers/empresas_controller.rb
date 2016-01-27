@@ -4,6 +4,9 @@ class EmpresasController < ApplicationController
   # GET /empresas
   # GET /empresas.json
   def index
+    if !current_user
+      redirect_to '/'
+    end
     @empresas = Empresa.all
   end
 
@@ -14,21 +17,30 @@ class EmpresasController < ApplicationController
 
   # GET /empresas/new
   def new
+    if !current_user
+      redirect_to '/'
+    end
     @empresa = Empresa.new
   end
 
   # GET /empresas/1/edit
   def edit
+    if !current_user
+      redirect_to '/'
+    end
   end
 
   # POST /empresas
   # POST /empresas.json
   def create
+    if !current_user
+      redirect_to '/'
+    end
     @empresa = Empresa.new(empresa_params)
 
     respond_to do |format|
       if @empresa.save
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully created.' }
+        format.html { redirect_to '/administrador', notice: 'Empresa was successfully created.' }
         format.json { render :show, status: :created, location: @empresa }
       else
         format.html { render :new }
@@ -40,9 +52,12 @@ class EmpresasController < ApplicationController
   # PATCH/PUT /empresas/1
   # PATCH/PUT /empresas/1.json
   def update
+    if !current_user
+      redirect_to '/'
+    end
     respond_to do |format|
       if @empresa.update(empresa_params)
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully updated.' }
+        format.html { redirect_to '/administrador', notice: 'Empresa was successfully updated.' }
         format.json { render :show, status: :ok, location: @empresa }
       else
         format.html { render :edit }

@@ -1,14 +1,34 @@
+<div class="row" style="padding:10px; background-color:white;">
+	<% @noticias.each do |noticia| %>
+		<div class="col-md-3" style="padding:0; padding-left:8px;">
+			<center>
+				<img class="img-responsive" src="/assets/noticia.jpg">
+			</center>
+			<div style="background:grey; position:relative; margin-top:-180px;opacity: 0.5;">
+				<h3 style="text-align:left; visibility:hidden;">Titulo</h3>
+				<p style="text-align:justify;visibility:hidden;">
+					<br><br><br><br><br><br>
+				</p>
+			</div>
+			<div style="position:relative; margin-top:-160px; color:black;">
+				<h3 style="text-align:left;"><%= noticia.titulo %></h3>
+				<p style="text-align:justify;">
+					<%= truncate noticia.contenido, length: 60 %>
+				</p>
+			</div>
+			<br><br><br><br>
+		</div>
+
+	<% end %>
+</div>
 <div class="row">
-	<div class="col-md-3" style="padding:0;">
-		<img class="img-responsive" src="<%=@inicio.imagen1.url%>">
+	<div class="col-md-4">
+
 	</div>
-	<div class="col-md-3" style="padding:0;">
-		<img class="img-responsive" src="<%=@inicio.imagen1.url%>">
-	</div>
-	<div class="col-md-3" style="padding:0;">
-		<img class="img-responsive" src="<%=@inicio.imagen1.url%>">
-	</div>
-	<div class="col-md-3" style="padding:0;">
-		<img class="img-responsive" src="<%=@inicio.imagen1.url%>">
+	<div class="col-md-4">
+		<center>
+				<%= will_paginate @noticias, renderer: BootstrapPagination::Rails, previous_label: "<", next_label: ">" %>
+		</center>
+
 	</div>
 </div>

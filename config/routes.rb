@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :articulos
   resources :contactos
   resources :empresas
   resources :inicios
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
   get'/proyectos' => 'welcome#proyectos'
   get'/contacto' => 'contactos#new'
   get'/noticias' => 'welcome#noticias'
+  get '/administrador' => 'welcome#administrador'
+  get '/login' => 'welcome#login'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -4,12 +4,18 @@ class ContactosController < ApplicationController
   # GET /contactos
   # GET /contactos.json
   def index
+    if !current_user
+      redirect_to '/'
+    end
     @contactos = Contacto.all
   end
 
   # GET /contactos/1
   # GET /contactos/1.json
   def show
+    if !current_user
+      redirect_to '/'
+    end
   end
 
   # GET /contactos/new
@@ -19,15 +25,21 @@ class ContactosController < ApplicationController
 
   # GET /contactos/1/edit
   def edit
+    if !current_user
+      redirect_to '/'
+    end
   end
 
   # POST /contactos
   # POST /contactos.json
   def create
+    if !current_user
+      redirect_to '/'
+    end
     @contacto = Contacto.new(contacto_params)
       respond_to do |format|
       if @contacto.save
-        format.html { redirect_to @contacto, notice: 'Contacto was successfully created.' }
+        format.html { redirect_to '/', notice: 'Contacto was successfully created.' }
         format.json { render :show, status: :created, location: @contacto }
       else
         format.html { render :new }
@@ -39,9 +51,12 @@ class ContactosController < ApplicationController
   # PATCH/PUT /contactos/1
   # PATCH/PUT /contactos/1.json
   def update
+    if !current_user
+      redirect_to '/'
+    end
     respond_to do |format|
       if @contacto.update(contacto_params)
-        format.html { redirect_to @contacto, notice: 'Contacto was successfully updated.' }
+        format.html { redirect_to '/', notice: 'Contacto was successfully updated.' }
         format.json { render :show, status: :ok, location: @contacto }
       else
         format.html { render :edit }

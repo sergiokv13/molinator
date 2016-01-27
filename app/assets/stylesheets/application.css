@@ -12,24 +12,21 @@
  *
  *= require_tree .
  *= require_self
+ *= require rails_bootstrap_forms
  *= require bootstrap_and_overrides
  */
 
-@font-face {
-        font-family: "nexal";
-        src: url(/assets/nexa-light-webfont.ttf) format("truetype")!;
-    }
-
-
  html,body{
  	height:100%;
+  background-image: url("/assets/side.png");
+  background-repeat: no-repeat;
  }
 #menu a{
-	#font-family: "nexal" !important;
-	margin-right: 8px;
-	font-size: 14px;
+		font-size: 14px;
 }
-
+.admi-icon{
+  font-size: 150px;
+}
 a.selected{
 	color: rgb(81,116,169);
 }
@@ -40,29 +37,17 @@ a.selected{
 	background-color: #C0C0C0;
 	margin-bottom: 5px;
 }
-
-#fullRow{
-	
-}
-
-#sidebar {
-	padding: 0px;
-}
-
 #menu {
-	margin-top: 120px;
-	margin-bottom: -8px;
 	background-color: white;
 	border: none;
 }
 
 #container {
 	padding: 30px;
-	background-color: rgb(196,212,255);
+	background-color: #CEDEFF;
 	border-radius: 3px;
-	padding-top: 5px; 
+	padding-top: 5px;
 	text-align: center;
-	font-family: "nexal";
 }
 
 .formato_imagen {
@@ -73,5 +58,3 @@ a.selected{
     margin-right: auto;
     margin-left: auto;
 }
-
-

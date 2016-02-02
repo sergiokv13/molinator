@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Contactos</h1>
+<h1>Listado de  Contactos</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -18,14 +18,11 @@
         <td><%= contacto.nombre %></td>
         <td><%= contacto.email %></td>
         <td><%= contacto.mensaje %></td>
-        <td><%= link_to 'Show', contacto %></td>
-        <td><%= link_to 'Edit', edit_contacto_path(contacto) %></td>
-        <td><%= link_to 'Destroy', contacto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Borrar', contacto, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Está seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Contacto', new_contacto_path %>
+<%= link_to 'Atrás', '/administrador', :class => 'btn btn-danger' %>

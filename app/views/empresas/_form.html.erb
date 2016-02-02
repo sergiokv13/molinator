@@ -1,21 +1,21 @@
 <%= bootstrap_form_for(@empresa) do |f| %>
   <% if @empresa.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
-
+      <h2>Existen errores</h2>
+      <!--
       <ul>
       <% @empresa.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
+    </ul>-->
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.text_area :titulo1 %>
+    <%= f.text_area :titulo1, label: 'Título 1' %>
   </div>
   <div class="field">
-    <%= f.text_area :titulo2 %>
+    <%= f.text_area :titulo2, label: 'Título 2' %>
   </div>
   <div class="field">
     <%= f.text_area :texto1 %>

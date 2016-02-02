@@ -57,7 +57,7 @@ class EmpresasController < ApplicationController
     end
     respond_to do |format|
       if @empresa.update(empresa_params)
-        format.html { redirect_to '/administrador', notice: 'Empresa was successfully updated.' }
+        format.html { redirect_to '/administrador', notice: 'Se actualizó correctamente' }
         format.json { render :show, status: :ok, location: @empresa }
       else
         format.html { render :edit }

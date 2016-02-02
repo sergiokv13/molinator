@@ -43,7 +43,7 @@ class IniciosController < ApplicationController
 
     respond_to do |format|
       if @inicio.save
-        format.html { redirect_to '/administrador', notice: 'Inicio was successfully created.' }
+        format.html { redirect_to '/administrador', notice: 'El inicio fue actualizado exitosamente' }
         format.json { render :show, status: :created, location: @inicio }
       else
         format.html { render :new }
@@ -60,7 +60,7 @@ class IniciosController < ApplicationController
     end
     respond_to do |format|
       if @inicio.update(inicio_params)
-        format.html { redirect_to '/administrador', notice: 'Inicio was successfully updated.' }
+        format.html { redirect_to '/administrador', notice: 'El inicio fue actualizado exitosamente' }
         format.json { render :show, status: :ok, location: @inicio }
       else
         format.html { render :edit }

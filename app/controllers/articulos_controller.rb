@@ -40,7 +40,7 @@ class ArticulosController < ApplicationController
 
     respond_to do |format|
       if @articulo.save
-        format.html { redirect_to '/administrador', notice: 'Articulo was successfully created.' }
+        format.html { redirect_to '/administrador', notice: 'La noticia fue creada exitosamente' }
         format.json { render :show, status: :created, location: @articulo }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@ class ArticulosController < ApplicationController
     end
     respond_to do |format|
       if @articulo.update(articulo_params)
-        format.html { redirect_to '/administrador', notice: 'Articulo was successfully updated.' }
+        format.html { redirect_to '/administrador', notice: 'La noticia fue actualizada exitosamente' }
         format.json { render :show, status: :ok, location: @articulo }
       else
         format.html { render :edit }
@@ -71,7 +71,7 @@ class ArticulosController < ApplicationController
   def destroy
     @articulo.destroy
     respond_to do |format|
-      format.html { redirect_to articulos_url, notice: 'Articulo was successfully destroyed.' }
+      format.html { redirect_to articulos_url, notice: 'La noticia fue borrada exitosamente' }
       format.json { head :no_content }
     end
   end
@@ -84,6 +84,6 @@ class ArticulosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def articulo_params
-      params.require(:articulo).permit(:titulo, :contenido)
+      params.require(:articulo).permit(:titulo, :contenido, :foto)
     end
 end

@@ -2,7 +2,7 @@
 	<% @noticias.each do |noticia| %>
 		<div class="col-md-3" style="padding:0; padding-left:8px;">
 			<center>
-				<img class="img-responsive" src="/assets/noticia.jpg">
+				<img class="img-responsive" src="<%= noticia.foto.url %>">
 			</center>
 			<div style="background:grey; position:relative; margin-top:-180px;opacity: 0.5;">
 				<h3 style="text-align:left; visibility:hidden;">Titulo</h3>

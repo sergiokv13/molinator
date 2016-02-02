@@ -33,13 +33,10 @@ class ContactosController < ApplicationController
   # POST /contactos
   # POST /contactos.json
   def create
-    if !current_user
-      redirect_to '/'
-    end
     @contacto = Contacto.new(contacto_params)
       respond_to do |format|
       if @contacto.save
-        format.html { redirect_to '/', notice: 'Contacto was successfully created.' }
+        format.html { redirect_to '/', notice: 'Su mensaje fue enviado exitosamente' }
         format.json { render :show, status: :created, location: @contacto }
       else
         format.html { render :new }
@@ -70,7 +67,7 @@ class ContactosController < ApplicationController
   def destroy
     @contacto.destroy
     respond_to do |format|
-      format.html { redirect_to contactos_url, notice: 'Contacto was successfully destroyed.' }
+      format.html { redirect_to contactos_url, notice: 'El mensaje fue borrado exitosamente' }
       format.json { head :no_content }
     end
   end

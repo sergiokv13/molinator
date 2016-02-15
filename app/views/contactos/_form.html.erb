@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@contacto) do |f| %>
+<%= bootstrap_form_for @contacto, validate: true do |f| %>
   <% if @contacto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contacto.errors.count, "error") %> prohibited this contacto from being saved:</h2>

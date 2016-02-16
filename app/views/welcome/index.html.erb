@@ -33,14 +33,14 @@
     </div>
   </div>
 </div>
-<% if @pagina_inicio.titulo != nil %>
+<% if @pagina_inicio != nil %>
   <h1><%=@pagina_inicio.titulo%></h1>
 <% end %>
 
 <div class="row">
       <div class="col-md-12 sidebar">
     		<p align="justify" style="margin-top:7px;">
-          <% if @pagina_inicio.titulo %>
+          <% if @pagina_inicio != nil %>
     	 		  <%= @pagina_inicio.texto1%>
           <% end %>
     	 	</p>

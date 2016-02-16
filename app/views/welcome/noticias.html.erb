@@ -10,7 +10,13 @@
 	        <h4 class="modal-title" id="myModalLabel"><%= noticia.titulo %></h4>
 	      </div>
 	      <div class="modal-body">
-	        <%= noticia.contenido %>
+
+					<div class="col-lg-4">
+							<img class="img-responsive" src="<%= noticia.foto.url %>">
+					</div>
+					<div class="col-lg-6">
+							<%= noticia.contenido %>
+					</div>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>

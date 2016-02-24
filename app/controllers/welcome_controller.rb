@@ -16,7 +16,7 @@ class WelcomeController < ApplicationController
   end
 
   def noticias
-    @noticias = Articulo.paginate(:page => params[:page], :per_page => 4).order('created_at DESC')
+    @noticias = Articulo.all
   end
 
   def administrador

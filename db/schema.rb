@@ -11,17 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202190551) do
+ActiveRecord::Schema.define(version: 20160127200051) do
 
   create_table "articulos", force: :cascade do |t|
     t.string   "titulo"
     t.text     "contenido"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "foto_file_name"
-    t.string   "foto_content_type"
-    t.integer  "foto_file_size"
-    t.datetime "foto_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contactos", force: :cascade do |t|

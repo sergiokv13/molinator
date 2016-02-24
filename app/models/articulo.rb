@@ -4,5 +4,5 @@ class Articulo < ActiveRecord::Base
                   :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
   validates_attachment_presence :foto
-  validates_attachment_content_type :foto, :content_type => ['image/jpeg', 'image/png']
+  validates_attachment_content_type :foto, :content_type => ['image/jpeg', 'image/png', 'image/jpg']
 end
